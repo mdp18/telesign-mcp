@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache
+.npm
+
+# Debug
+.node_repl_history
+
+# AI assistant files
+CLAUDE.md
+.claude/
+.cursorrules
+.cursorignore
+.cursor/
+.aider*
+.aiderignore
+.github/copilot-instructions.md
+.copilot/
+.codeium/
+.continue/
+.continuerc.json
+.windsurfrules
+.windsurf/
+.bolt/
+.v0/
+AGENTS.md
+.roomodes
+.roo/
+.tabnine/
+.sourcery.yaml
+.cody/
+.supermaven/

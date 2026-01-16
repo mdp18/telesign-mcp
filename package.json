@@ -1,0 +1,57 @@
+{
+  "name": "telesign-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for TeleSign APIs - phone verification, intelligence, and messaging",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./build/index.js",
+  "bin": {
+    "telesign-mcp": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run copy-docs",
+    "copy-docs": "shx mkdir -p build/docs && shx cp src/docs/*.md build/docs/",
+    "dev": "tsc --watch",
+    "start": "node build/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "build",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "telesign",
+    "mcp",
+    "model-context-protocol",
+    "sms",
+    "otp",
+    "verification",
+    "phone",
+    "ai",
+    "claude",
+    "chatgpt",
+    "llm"
+  ],
+  "author": "Max Peaslee <mdp18@uw.edu>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdp18/telesign-mcp.git"
+  },
+  "homepage": "https://github.com/mdp18/telesign-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/mdp18/telesign-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "shx": "^0.4.0",
+    "typescript": "^5.0.0"
+  }
+}
