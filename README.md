@@ -42,7 +42,7 @@ The [Model Context Protocol](https://modelcontextprotocol.io/) is an open standa
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-org/telesign-mcp.git
+   git clone https://github.com/mdp18/telesign-mcp.git
    cd telesign-mcp
    ```
 
