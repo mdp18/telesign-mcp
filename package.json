@@ -1,7 +1,7 @@
 {
   "name": "telesign-mcp",
-  "version": "1.0.0",
-  "description": "MCP server for TeleSign APIs - phone verification, intelligence, and messaging",
+  "version": "2.0.0",
+  "description": "MCP server for Telesign APIs - verification, messaging, voice, number masking, Phone ID and fraud intelligence",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./build/index.js",
@@ -9,10 +9,12 @@
     "telesign-mcp": "build/index.js"
   },
   "scripts": {
-    "build": "tsc && npm run copy-docs",
-    "copy-docs": "shx mkdir -p build/docs && shx cp src/docs/*.md build/docs/",
+    "build": "shx rm -rf build && tsc && npm run copy-docs",
+    "copy-docs": "shx mkdir -p build/docs/reference && shx cp src/docs/*.md build/docs/ && shx cp src/docs/reference/*.md build/docs/reference/",
     "dev": "tsc --watch",
     "start": "node build/index.js",
+    "sync-specs": "node scripts/sync-specs.mjs",
+    "test": "npm run build && node --test test/server.test.mjs test/toolsets.test.mjs test/safety.test.mjs",
     "prepublishOnly": "npm run build"
   },
   "files": [
@@ -31,7 +33,13 @@
     "ai",
     "claude",
     "chatgpt",
-    "llm"
+    "llm",
+    "voice",
+    "whatsapp",
+    "rcs",
+    "fraud",
+    "phone-intelligence",
+    "2fa"
   ],
   "author": "Max Peaslee <mdp18@uw.edu>",
   "repository": {
@@ -46,12 +54,12 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
-    "zod": "^3.0.0"
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^20.19.43",
     "shx": "^0.4.0",
-    "typescript": "^5.0.0"
+    "typescript": "^7.0.2"
   }
 }

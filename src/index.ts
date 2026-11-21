@@ -3,13 +3,14 @@ import { createServer } from "./server.js";
 
 async function main() {
   const server = await createServer();
-  console.error("TeleSign MCP Server running on stdio");
+  console.error("Telesign MCP server running on stdio");
 
-  // Keep the process alive
-  process.on("SIGINT", async () => {
+  const shutdown = async () => {
     await server.close();
     process.exit(0);
-  });
+  };
+  process.on("SIGINT", shutdown);
+  process.on("SIGTERM", shutdown);
 }
 
 main().catch((error) => {
