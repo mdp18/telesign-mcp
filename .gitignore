@@ -62,3 +62,7 @@ AGENTS.md
 .sourcery.yaml
 .cody/
 .supermaven/
+
+# Local agent skill (kept out of the repo)
+skills/
+*.skill
